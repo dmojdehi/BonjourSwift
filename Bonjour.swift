@@ -22,7 +22,7 @@
 
 import Foundation
 
-class Bonjour: NSObject, NetServiceBrowserDelegate {
+public class Bonjour: NSObject, NetServiceBrowserDelegate {
     var timeout: TimeInterval = 1.0
     var serviceFoundClosure: (([NetService]) -> Void)!
     var domainFoundClosure: (([String]) -> Void)!
@@ -141,7 +141,7 @@ class Bonjour: NSObject, NetServiceBrowserDelegate {
     /// **Please Note:** Only one search can run at a time.
     ///
     /// - returns: True if the search was started, false if a search is already running
-    func findDomains(_ found: @escaping ([String]) -> Void) -> Bool {
+    public func findDomains(_ found: @escaping ([String]) -> Void) -> Bool {
         if !isSearching {
             serviceBrowser.delegate = self
             domainTimeout = Timer.scheduledTimer(
@@ -158,7 +158,7 @@ class Bonjour: NSObject, NetServiceBrowserDelegate {
         return false
     }
     
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService,
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService,
                            moreComing: Bool) {
         serviceTimeout.invalidate()
         services.append(service)
