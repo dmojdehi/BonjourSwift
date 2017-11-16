@@ -96,7 +96,7 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
         // Used by the Xcode Service Service in the Apple Server App
         public static let Xcode_Server: String = "_xcs2p._tcp."
     }
-    static let LocalDomain: String = "local."
+    public static let LocalDomain: String = "local."
 
     let serviceBrowser: NetServiceBrowser = NetServiceBrowser()
     var services = [NetService]()
