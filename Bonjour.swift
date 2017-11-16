@@ -28,7 +28,7 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
     var domainFoundClosure: (([String]) -> Void)!
 
     // Source: https://developer.apple.com/library/mac/qa/qa1312/_index.html
-    struct Services {
+    public struct Services {
         // Used by Personal File Sharing in the Sharing preference panel starting in Mac OS X 10.2.
         // The Finder browses for AFP servers starting in Mac OS X 10.2.
         static let AppleTalk_Filing: String = "_afpovertcp._tcp."
