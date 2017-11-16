@@ -158,7 +158,7 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
         return false
     }
 
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService,
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService,
                            moreComing: Bool) {
         serviceTimeout.invalidate()
         services.append(service)
@@ -175,7 +175,7 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
         isSearching = false
     }
 
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFindDomain domainString: String,
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didFindDomain domainString: String,
                            moreComing: Bool) {
         domainTimeout.invalidate()
         domains.append(domainString)
