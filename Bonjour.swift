@@ -116,7 +116,7 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
     ///   - identifier: The service identifier. You may use Bonjour.Services for common services
     ///   - domain: The domain name for the service.  You may use Bonjour.LocalDomain
     /// - returns: True if the search was started, false if a search is already running
-    func findService(_ identifier: String, domain: String, found: @escaping ([NetService]) -> Void) -> Bool {
+    public func findService(_ identifier: String, domain: String, found: @escaping ([NetService]) -> Void) -> Bool {
         if !isSearching {
             serviceBrowser.delegate = self
             serviceTimeout = Timer.scheduledTimer(
@@ -141,7 +141,7 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
     /// **Please Note:** Only one search can run at a time.
     ///
     /// - returns: True if the search was started, false if a search is already running
-    func findDomains(_ found: @escaping ([String]) -> Void) -> Bool {
+    public func findDomains(_ found: @escaping ([String]) -> Void) -> Bool {
         if !isSearching {
             serviceBrowser.delegate = self
             domainTimeout = Timer.scheduledTimer(
