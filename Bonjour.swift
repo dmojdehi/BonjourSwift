@@ -186,7 +186,7 @@ class Bonjour: NSObject, NetServiceBrowserDelegate {
         }
     }
 
-    func noDomainsFound() {
+    @objc func noDomainsFound() {
         domainFoundClosure([])
         serviceBrowser.stop()
         isSearching = false
