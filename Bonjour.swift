@@ -23,7 +23,7 @@
 import Foundation
 
 public class Bonjour: NSObject, NetServiceBrowserDelegate {
-    var timeout: TimeInterval = 1.0
+    public var timeout: TimeInterval = 1.0
     var serviceFoundClosure: (([NetService]) -> Void)!
     var domainFoundClosure: (([String]) -> Void)!
 
