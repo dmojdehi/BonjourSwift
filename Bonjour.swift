@@ -98,7 +98,7 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
     }
     public static let LocalDomain: String = "local."
 
-    let serviceBrowser: NetServiceBrowser = NetServiceBrowser()
+    public serviceBrowser: NetServiceBrowser = NetServiceBrowser()
     var services = [NetService]()
     var domains = [String]()
     var isSearching: Bool = false
