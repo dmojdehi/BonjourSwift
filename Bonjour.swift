@@ -164,8 +164,9 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
         services.append(service)
         if !moreComing {
             serviceFoundClosure(services)
-            serviceBrowser.stop()
-            isSearching = false
+            services.removeAll()
+            // serviceBrowser.stop()
+            // isSearching = false
         }
     }
 
@@ -181,8 +182,9 @@ public class Bonjour: NSObject, NetServiceBrowserDelegate {
         domains.append(domainString)
         if !moreComing {
             domainFoundClosure(domains)
-            serviceBrowser.stop()
-            isSearching = false
+            domains.removeAll()
+            // serviceBrowser.stop()
+            // isSearching = false
         }
     }
 
